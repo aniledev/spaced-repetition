@@ -1,0 +1,17 @@
+.registration-route {
+  margin: auto;
+  width: 70%;
+  text-align: center;
+}
+
+.registration-description {
+  font-size: 300%;
+  font-weight: 600;
+}
+
+.sign-up-header {
+  font-size: 200%;
+  font-weight: 600;
+  margin-top: 40px;
+  margin-bottom: 35px;
+}
