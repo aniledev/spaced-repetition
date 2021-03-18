@@ -1,4 +1,5 @@
-button.Button.sign-up-button {
+button.Button.sign-up-button,
+button.Button.login-button {
   background-color: #16db93;
   border-color: #16db93;
   color: black;
@@ -11,7 +12,9 @@ button.Button.sign-up-button {
 }
 
 button.Button.sign-up-button:hover,
-button.Button.sign-up-button:focus {
+button.Button.sign-up-button:focus,
+button.Button.login-button:hover,
+button.Button.login-button:focus {
   background-color: #11a770;
   border-color: #11a770;
   color: #e6e8e6;
