@@ -1,6 +1,6 @@
 * {
-  color: white;
-  background: purple;
+  color: #e6e8e6;
+  background: #4a3681;
 }
 
 .registration-form {
@@ -16,7 +16,7 @@
 .registration-input {
   float: right;
   font-size: 175%;
-  background-color: white;
+  background-color: #e6e8e6;
   border: none;
   border-radius: 8px;
 }

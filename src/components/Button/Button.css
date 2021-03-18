@@ -1,6 +1,7 @@
 button.Button.sign-up-button {
-  background-color: green;
-  border-color: green;
+  background-color: #16db93;
+  border-color: #16db93;
+  color: black;
   width: 100px;
   height: 40px;
   float: right;
@@ -11,8 +12,9 @@ button.Button.sign-up-button {
 
 button.Button.sign-up-button:hover,
 button.Button.sign-up-button:focus {
-  background-color: darkgreen;
-  border-color: darkgreen;
+  background-color: #11a770;
+  border-color: #11a770;
+  color: #e6e8e6;
   width: 120px;
   height: 48px;
   float: right;
