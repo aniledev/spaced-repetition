@@ -1,0 +1,22 @@
+button.Button.sign-up-button {
+  background-color: green;
+  border-color: green;
+  width: 100px;
+  height: 40px;
+  float: right;
+  border: none;
+  border-radius: 8px;
+  font-size: 20px;
+}
+
+button.Button.sign-up-button:hover,
+button.Button.sign-up-button:focus {
+  background-color: darkgreen;
+  border-color: darkgreen;
+  width: 120px;
+  height: 48px;
+  float: right;
+  border: none;
+  border-radius: 8px;
+  font-size: 20px;
+}
