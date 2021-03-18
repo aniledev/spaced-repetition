@@ -1,0 +1,49 @@
+* {
+  color: white;
+  background: purple;
+}
+
+.registration-form {
+  text-align: left;
+  margin: auto;
+  width: 60%;
+}
+
+.label-input {
+  padding-bottom: 40px;
+}
+
+.registration-input {
+  float: right;
+  font-size: 175%;
+  background-color: white;
+  border: none;
+  border-radius: 8px;
+}
+
+.existing-account-link {
+  text-align: right;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.existing-account-link:hover,
+.existing-account-link:focus {
+  text-align: right;
+  font-size: 19.2px;
+  font-weight: 600;
+}
+
+.registration-footer {
+  display: flex;
+  flex-direction: column;
+}
+
+label.Label {
+  font-size: 150%;
+  font-weight: 600;
+}
+
+.button-div {
+  height: 50px;
+}
