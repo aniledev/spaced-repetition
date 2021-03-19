@@ -6,6 +6,17 @@ class LearningRoute extends Component {
   //initialize state to hold values for error logging and results from the serer
   constructor(props) {
     super(props);
+    // bind event handler to this component
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  // write method to submit the form and check the guess translation against the server/database
+  handleSubmit(event) {
+    event.preventDefault();
+    // create a variable for the currennt word
+    // create a variable for the guess translation
+    // send HTTP request to the server api/language/guess to check the guess against teh server
+    // update the variable for the next word using state
   }
 
   // create GET request to api/language/head to start learning with the first word when the component mounts
