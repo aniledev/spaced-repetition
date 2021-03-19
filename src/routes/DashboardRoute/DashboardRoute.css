@@ -1,0 +1,48 @@
+.dashboard-route {
+  margin: auto;
+  width: 70%;
+  text-align: center;
+}
+
+.dashboard-header {
+  font-size: 300%;
+  font-weight: 600;
+  margin: 0;
+}
+
+.correct {
+  font-size: 110%;
+  font-weight: 400;
+}
+
+.dashboard-subtitle {
+  font-size: 200%;
+  margin-top: 50px;
+}
+
+.unordered-list {
+  padding: 0;
+}
+
+.word-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.word {
+  font-size: 22px;
+}
+
+.word-info {
+  font-size: 18px;
+}
+
+.word,
+.word-info {
+  margin: 0;
+}
+
+.stats {
+  margin-bottom: 15px;
+}

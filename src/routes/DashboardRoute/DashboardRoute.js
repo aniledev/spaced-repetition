@@ -43,17 +43,17 @@ class DashboardRoute extends Component {
     wordsFromContext.forEach((word, key) =>
       result.push(<WordList key={key} word={word} />)
     );
-    return <ul>{result}</ul>;
+    return <ul className="unordered-list">{result}</ul>;
   }
 
   render() {
     return (
-      <section>
+      <section className="dashboard-route">
         {/* h2 and p need to be updated with info from the server*/}
         <h2 className="dashboard-header">
           {this.context.language ? this.context.language.name : null}
         </h2>
-        <p>Total correct answers: 7</p>
+        <p className="correct">Total correct answers: 7</p>
         <h3 className="dashboard-subtitle">Words to Practice</h3>
         <div className="words-to-practice">
           {this.context.words ? this.wordListInfo(this.context.words) : null}
