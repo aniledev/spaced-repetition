@@ -23,7 +23,7 @@ class DashboardRoute extends Component {
 
   // mount component and fetch GET /api/language endpoint ung the bearer token and service
   componentDidMount() {
-    return fetch(`${config.API_ENDPOINT}/api/language`, {
+    return fetch(`${config.API_ENDPOINT}/language`, {
       headers: {
         Authorization: `bearer ${TokenService.getAuthToken()}`,
       },

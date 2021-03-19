@@ -31,7 +31,7 @@ class LearningRoute extends Component {
     // when i submit the form i also need to conditionally render the feedback text on the page
 
     // send HTTP request to the server api/language/guess to check the guess against teh server
-    fetch(`${config.API_ENDPOINT}/api/language/guess`, {
+    fetch(`${config.API_ENDPOINT}/language/guess`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -54,7 +54,7 @@ class LearningRoute extends Component {
   // create GET request to api/language/head to start learning with the first word when the component mounts
   componentDidMount() {
     return (
-      fetch(`${config.API_ENDPOINT}/api/language/head`, {
+      fetch(`${config.API_ENDPOINT}/language/head`, {
         headers: {
           Authorization: `bearer ${TokenService.getAuthToken()}`,
         },
