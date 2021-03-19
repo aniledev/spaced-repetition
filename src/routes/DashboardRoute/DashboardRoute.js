@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import UserContext from "../../contexts/UserContext";
 
 class DashboardRoute extends Component {
   // initialize state to catch errors a use that for conditional rendering of error messages
@@ -10,6 +11,9 @@ class DashboardRoute extends Component {
       loading: true,
     };
   }
+
+  // use context for sharing data
+  static contextType = UserContext;
 
   render() {
     return (
