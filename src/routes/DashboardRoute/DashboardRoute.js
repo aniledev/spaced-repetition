@@ -45,11 +45,21 @@ class DashboardRoute extends Component {
         <h3>Words to Practice</h3>
         <div className="words-to-practice">
           <ul>
-            <li>Word</li>
-            <li>Word</li>
-            <li>Word</li>
-            <li>Word</li>
-            <li>Word</li>
+            <li>
+              <p>Words</p>
+              <p>correct answer: 3</p>
+              <p>incorrect answer 3</p>
+            </li>
+            <li>
+              <p>Words</p>
+              <p>correct answer: 3</p>
+              <p>incorrect answer 3</p>
+            </li>
+            <li>
+              <p>Words</p>
+              <p>correct answer: 3</p>
+              <p>incorrect answer 3</p>
+            </li>
           </ul>
         </div>
         <Link className="start-practicing-link" to="/learn">
