@@ -2,6 +2,11 @@ import { Input, Required, Label } from "../../components/Form/Form";
 import Button from "../../components/Button/Button";
 
 class LearningRoute extends Component {
+  //initialize state to hold values for error logging and results from the serer
+  constructor(props) {
+    super(props);
+  }
+
   // create GET request to api/language/head to start learning with the first word when the component mounts
   componentDidMount() {
   }
