@@ -23,6 +23,12 @@ const UserContext = React.createContext({
   currentWord: {},
   // create a variable to hold the guessed translation from the user
   translationGuess: {},
+  // use this empty callback function to update the state to show the next word and the current word in the word table database
+  setNextWord: () => {},
+  setCurrentWord: () => {},
+  /// use this empty callback function to set the guess to be sent to the service/server to verify
+  setTranslationGuess: () => {},
+  // will i need the total score to be updated in context????
 });
 
 export default UserContext;
