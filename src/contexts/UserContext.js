@@ -18,6 +18,11 @@ const UserContext = React.createContext({
   // add empty callback functions for setting the language and the list of words
   setLanguage: () => {},
   setWords: () => {},
+  // add the next word and current word to the context based on the response object from service/database
+  nextWord: {},
+  currentWord: {},
+  // create a variable to hold the guessed translation from the user
+  translationGuess: {},
 });
 
 export default UserContext;
