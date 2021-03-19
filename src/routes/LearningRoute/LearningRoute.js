@@ -27,7 +27,6 @@ class LearningRoute extends Component {
     event.preventDefault();
     // create a variable for the current word
     // create a variable for the guess translation
-    // send HTTP request to the server api/language/guess to check the guess against teh server
     // update the variable for the next word using state
     // when i submit the form i also need to conditionally render the feedback text on the page
 
