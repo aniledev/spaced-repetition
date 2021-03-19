@@ -49,18 +49,13 @@ describe(`User story: Presented with word`, function() {
       .visit(`/learn`)
       .wait('@languageHeadRequest')
 
-    cy.get('main form').within($form => {
-      cy.get('label[for=learn-guess-input]')
-        .should('have.text', `What's the translation for this word?`)
+        `What's the translation for this word?*`
 
       cy.get('input#learn-guess-input')
         .should('have.attr', 'type', 'text')
         .and('have.attr', 'required', 'required')
 
-      cy.get('button[type=submit]')
-        .should('have.text', 'Submit your answer')
-    })
-  })
+      cy.get("button[type=submit]").should("have.text", "Submit Answer");
 
   it(`displays the correct and incorrect count for this word`, () => {
     cy.login()
