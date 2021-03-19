@@ -34,6 +34,15 @@ class DashboardRoute extends Component {
       .catch((err) => this.setState({ error: err }));
   }
 
+  // create a function that generates the components for each of the words in the list with info using the words in context
+  wordListInfo(wordsFromContext) {
+    let result = [];
+    wordsFromContext.forEach((word, key) =>
+      result.push(<WordList key={key} word={word} />)
+    );
+    return <ul>{result}</ul>;
+  }
+
   render() {
     return (
       <section>
