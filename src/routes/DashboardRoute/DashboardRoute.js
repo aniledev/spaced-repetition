@@ -23,7 +23,7 @@ class DashboardRoute extends Component {
 
   // mount component and fetch GET /api/language endpoint ung the bearer token and service
   componentDidMount() {
-    return fetch(`${config.API_ENDPOINT}/language`, {
+    return fetch(`${config.API_ENDPOINT}/api/language`, {
       headers: {
         Authorization: `bearer ${TokenService.getAuthToken()}`,
       },
@@ -58,7 +58,7 @@ class DashboardRoute extends Component {
         <div className="words-to-practice">
           {this.context.words ? this.wordListInfo(this.context.words) : null}
         </div>
-        <Link  to="/learn">
+        <Link to="/learn">
           <Button className="start-practicing-button">Start Practicing</Button>
         </Link>
       </section>
