@@ -30,6 +30,17 @@ class LearningRoute extends Component {
     // send HTTP request to the server api/language/guess to check the guess against teh server
     // update the variable for the next word using state
     // when i submit the form i also need to conditionally render the feedback text on the page
+
+    // send HTTP request to the server api/language/guess to check the guess against teh server
+    fetch(`${config.API_ENDPOINT}/language/guess`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        Authorization: `bearer ${TokenService.getAuthToken()}`,
+      },
+      // the response body is the input value of the form
+      body: JSON.stringify({ guess: event.target.guess.value }),
+    });
   }
 
   // create GET request to api/language/head to start learning with the first word when the component mounts
