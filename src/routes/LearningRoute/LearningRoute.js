@@ -40,6 +40,15 @@ class LearningRoute extends Component {
       // the response body is the input value of the form
       body: JSON.stringify({ guess: event.target.guess.value }),
     });
+    // possible way to render feedback; did not pass tests
+    // .then((res) => res.json())
+    // .then((json) => {
+    //   this.context.setNextWord(json);
+    //   this.showFeedback();
+    //   document.getElementById("feedback-overlay").focus();
+    //   this.setState({ loading: false });
+    //   document.getElementById("learn-guess-input").value = "";
+    // });
   }
 
   // create GET request to api/language/head to start learning with the first word when the component mounts
