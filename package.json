@@ -15,6 +15,9 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.5"
   },
+  "engines": {
+    "node": "12.20.1"
+  },
   "scripts": {
     "start": "react-scripts start",
     "eject": "react-scripts eject",
