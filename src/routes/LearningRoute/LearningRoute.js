@@ -1,3 +1,4 @@
+import React, { Component } from "react";
 import { Input, Required, Label } from "../../components/Form/Form";
 import Button from "../../components/Button/Button";
 
