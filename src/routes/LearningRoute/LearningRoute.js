@@ -14,6 +14,8 @@ class LearningRoute extends Component {
     this.state = {
       error: null,
       // create this.state.results to determine if the server has update with results; this can conditionally render the correct incorrect feedback text
+      results: false,
+      // loading: true,
     };
   }
 
@@ -23,7 +25,7 @@ class LearningRoute extends Component {
   // write method to submit the form and check the guess translation against the server/database
   handleSubmit(event) {
     event.preventDefault();
-    // create a variable for the currennt word
+    // create a variable for the current word
     // create a variable for the guess translation
     // send HTTP request to the server api/language/guess to check the guess against teh server
     // update the variable for the next word using state
@@ -50,7 +52,6 @@ class LearningRoute extends Component {
   render() {
     return (
       <section className="learn-route">
-        {/* update h3  with data from the server once the component mounts */}
         <p>
           Your total score is:{" "}
           {this.context.nextWord ? this.context.nextWord.totalScore : null}
@@ -97,4 +98,4 @@ class LearningRoute extends Component {
   }
 }
 
-export default LearningRoute
+export default LearningRoute;
