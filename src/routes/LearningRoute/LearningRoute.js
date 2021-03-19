@@ -53,7 +53,9 @@ class LearningRoute extends Component {
         </p>
         <h2 className="learn-route-header">Translate the word:</h2>
         <span>
-          <h3>Testnextword</h3>
+          <h3>
+            {this.context.nextWord ? this.context.nextWord.nextWord : null}
+          </h3>
         </span>
 
         <form onSubmit={this.handleSubmit}>
