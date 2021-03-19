@@ -70,10 +70,12 @@ class LearningRoute extends Component {
     */}
     return (
       <section className="learn-route">
-        <p>
-          Your total score is:{" "}
-          {this.context.nextWord ? this.context.nextWord.totalScore : null}
-        </p>
+        <div className="DisplayScore">
+          <p>
+            Your total score is:{" "}
+            {this.context.nextWord ? this.context.nextWord.totalScore : null}
+          </p>
+        </div>
         <h2 className="learn-route-header">Translate the word:</h2>
         <span>
           <h3>
