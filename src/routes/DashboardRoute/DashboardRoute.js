@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Button from "../../components/Button/Button";
 import config from "../../config";
 import TokenService from "../../services/token-service";
 import UserContext from "../../contexts/UserContext";
@@ -50,7 +51,7 @@ class DashboardRoute extends Component {
           </ul>
         </div>
         <Link className="start-practicing-link" to="/learn">
-          Start Practicing
+          <Button>Start Practicing</Button>
         </Link>
       </section>
     );
