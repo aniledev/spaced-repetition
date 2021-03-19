@@ -2,6 +2,15 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 class DashboardRoute extends Component {
+  // initialize state to catch errors a use that for conditional rendering of error messages
+  constructor(props) {
+    super(props);
+    this.state = {
+      error: null,
+      loading: true,
+    };
+  }
+
   render() {
     return (
       <section>
