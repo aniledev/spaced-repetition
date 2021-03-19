@@ -48,7 +48,7 @@ class LearningRoute extends Component {
         })
         .catch((err) => this.setState({ error: err }))
     );
-  }
+  };
 
   render() {
     // eslint-disable-next-line no-lone-blocks
@@ -102,7 +102,7 @@ class LearningRoute extends Component {
         </p>
       </section>
     );
-  }
+  };
 }
 
 export default LearningRoute;
