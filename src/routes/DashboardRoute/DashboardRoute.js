@@ -58,8 +58,8 @@ class DashboardRoute extends Component {
         <div className="words-to-practice">
           {this.context.words ? this.wordListInfo(this.context.words) : null}
         </div>
-        <Link className="start-practicing-link" to="/learn">
-          <Button>Start Practicing</Button>
+        <Link  to="/learn">
+          <Button className="start-practicing-button">Start Practicing</Button>
         </Link>
       </section>
     );

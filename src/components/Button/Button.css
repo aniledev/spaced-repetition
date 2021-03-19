@@ -23,5 +23,28 @@ button.Button.login-button:focus {
   float: right;
   border: none;
   border-radius: 8px;
+  font-size: 24px;
+}
+
+button.Button.start-practicing-button {
+  background-color: #16db93;
+  border-color: #16db93;
+  color: black;
+  width: 200px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
   font-size: 20px;
+}
+
+button.Button.start-practicing-button:hover,
+button.Button.start-practicing-button:focus {
+  background-color: #11a770;
+  border-color: #11a770;
+  color: #e6e8e6;
+  width: 240px;
+  height: 48px;
+  border: none;
+  border-radius: 8px;
+  font-size: 24px;
 }
