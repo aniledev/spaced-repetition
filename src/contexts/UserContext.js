@@ -64,9 +64,14 @@ export class UserProvider extends Component {
     this.setState({ user })
   }
 
-  processLogin = authToken => {
-    TokenService.saveAuthToken(authToken)
-    const jwtPayload = TokenService.parseAuthToken()
+  // write a function that updates the state with the language and words from the server
+  setLanguage = (language) => {
+    this.setState({ language });
+  };
+
+  setWords = (words) => {
+    this.setState({ words });
+  };
     this.setUser({
       id: jwtPayload.user_id,
       name: jwtPayload.name,
@@ -114,7 +119,11 @@ export class UserProvider extends Component {
       setUser: this.setUser,
       processLogin: this.processLogin,
       processLogout: this.processLogout,
-    }
+      setLanguage: this.setLanguage,
+      language: this.state.language,
+      setWords: this.setWords,
+      words: this.state.words,
+    };
     return (
       <UserContext.Provider value={value}>
         {this.props.children}
