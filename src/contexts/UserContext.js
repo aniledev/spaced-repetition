@@ -163,7 +163,15 @@ export class UserProvider extends Component {
       language: this.state.language,
       setWords: this.setWords,
       words: this.state.words,
+      nextWord: this.state.nextWord,
+      currentWord: this.state.currentWord,
+      translationGuess: this.state.translationGuess,
+      setNextWord: this.setNextWord,
+      setCurrentWord: this.setCurrentWord,
+      setTranslationGuess: this.setTranslationGuess
+
     };
+
     return (
       <UserContext.Provider value={value}>
         {this.props.children}
