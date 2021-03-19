@@ -36,7 +36,15 @@ export default UserContext;
 export class UserProvider extends Component {
   constructor(props) {
     super(props);
-    const state = { user: {}, error: null, language: null, words: null };
+    const state = {
+      user: {},
+      error: null,
+      language: null,
+      words: null,
+      nextWord: null,
+      currentWord: null,
+      translationGuess: null,
+    };
 
     const jwtPayload = TokenService.parseAuthToken();
 
