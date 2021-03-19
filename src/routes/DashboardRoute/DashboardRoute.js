@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import config from "../../config";
+import TokenService from "../../services/token-service";
 import UserContext from "../../contexts/UserContext";
 
 class DashboardRoute extends Component {
@@ -14,6 +16,22 @@ class DashboardRoute extends Component {
 
   // use context for sharing data
   static contextType = UserContext;
+
+  // mount component and fetch GET /api/language endpoint ung the bearer token and service
+  componentDidMount() {
+    return fetch(`${config.API_ENDPOINT}/language`, {
+      headers: {
+        Authorization: `bearer ${TokenService.getAuthToken()}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        this.context.setLanguage(res.language);
+        this.context.setWords(res.words);
+        this.setState({ loading: false });
+      })
+      .catch((err) => this.setState({ error: err }));
+  }
 
   render() {
     return (
