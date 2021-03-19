@@ -1,3 +1,4 @@
+// update typo once entire application runs
 
 let _timeoutId
 let _idleCallback = null
