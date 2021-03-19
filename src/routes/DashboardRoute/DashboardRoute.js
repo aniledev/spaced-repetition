@@ -53,7 +53,7 @@ class DashboardRoute extends Component {
           {this.context.language ? this.context.language.name : null}
         </h2>
         <p>Total correct answers: 7</p>
-        <h3>Words to Practice</h3>
+        <h3 className="dashboard-subtitle">Words to Practice</h3>
         <div className="words-to-practice">
           {this.context.words ? this.wordListInfo(this.context.words) : null}
         </div>
