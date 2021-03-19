@@ -95,6 +95,20 @@ export class UserProvider extends Component {
     this.setState({ words });
   };
 
+  // write a functions that updates the state with nextWord, currentWord, and translationGue
+  setNextWord = nextWord => {
+    this.setState({nextWord})
+  }
+
+  setCurrentWord = currentWord => {
+    this.setState({currentWord})
+  }
+
+  setTranslationGuess = translationGuess => {
+    this.setState({translationGuess})
+  }
+
+
   processLogin = (authToken) => {
     TokenService.saveAuthToken(authToken);
     const jwtPayload = TokenService.parseAuthToken();
