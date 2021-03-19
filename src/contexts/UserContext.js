@@ -6,12 +6,17 @@ import IdleService from '../services/idle-service'
 const UserContext = React.createContext({
   user: {},
   error: null,
+  language: null,
+  words: null,
   setError: () => {},
   clearError: () => {},
   setUser: () => {},
   processLogin: () => {},
   processLogout: () => {},
-})
+  // add empty callback functions for setting the language and the list of words
+  setLanguage: () => {},
+  setWords: () => {},
+});
 
 export default UserContext
 
