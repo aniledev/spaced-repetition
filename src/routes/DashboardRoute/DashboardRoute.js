@@ -38,7 +38,7 @@ class DashboardRoute extends Component {
     return (
       <section>
         {/* h2 and p need to be updated with info from the server*/}
-        <h2 className="dashboard-header">Test language 1</h2>
+        <h2 className="dashboard-header">{this.context.language.name}</h2>
         <p>Total correct answers: 7</p>
         <h3>Words to Practice</h3>
         <div className="words-to-practice">
