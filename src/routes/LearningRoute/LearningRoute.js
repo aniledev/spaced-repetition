@@ -50,6 +50,12 @@ class LearningRoute extends Component {
   }
 
   render() {
+    // eslint-disable-next-line no-lone-blocks
+    {/*
+     I need to conditionally render a feedback div to show whether answer was right.
+     I need to conditioally render the correct answer
+     I need to conditionally render the button to either be a show answer or next word button
+    */}
     return (
       <section className="learn-route">
         <p>
