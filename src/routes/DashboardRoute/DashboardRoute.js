@@ -5,6 +5,7 @@ import config from "../../config";
 import TokenService from "../../services/token-service";
 import UserContext from "../../contexts/UserContext";
 import WordList from "./WordList";
+import "./DashboardRoute.css";
 // import { result } from "cypress/types/lodash";
 
 class DashboardRoute extends Component {
