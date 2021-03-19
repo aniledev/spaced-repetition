@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import UserContext from "../../contexts/UserContext";
 import { Input, Required, Label } from "../../components/Form/Form";
 import Button from "../../components/Button/Button";
 
@@ -9,6 +10,9 @@ class LearningRoute extends Component {
     // bind event handler to this component
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
+  // go ahead and initialize UserContext
+  static contextType = UserContext;
 
   // write method to submit the form and check the guess translation against the server/database
   handleSubmit(event) {
