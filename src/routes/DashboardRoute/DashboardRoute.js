@@ -4,6 +4,8 @@ import Button from "../../components/Button/Button";
 import config from "../../config";
 import TokenService from "../../services/token-service";
 import UserContext from "../../contexts/UserContext";
+import WordList from "./WordList";
+// import { result } from "cypress/types/lodash";
 
 class DashboardRoute extends Component {
   // initialize state to catch errors a use that for conditional rendering of error messages
