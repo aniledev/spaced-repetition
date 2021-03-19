@@ -82,6 +82,10 @@ class LearningRoute extends Component {
             {this.context.nextWord ? this.context.nextWord.nextWord : null}
           </h3>
         </span>
+        <div className="DisplayFeedback">
+          <p>You were right/good try..</p>
+          <p>The correct answer was...</p>
+        </div>
 
         <form onSubmit={this.handleSubmit}>
           <Label htmlFor="learn-guess-input">
