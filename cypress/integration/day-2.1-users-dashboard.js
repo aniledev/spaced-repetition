@@ -42,10 +42,10 @@ describe(`User story: User's dashboard`, function() {
 
         cy.get('a')
           .should('have.attr', 'href', '/learn')
-          .and('have.text', 'Start practicing')
+          .and('have.text', 'Start Practicing')
 
         cy.get('h3')
-          .should('have.text', 'Words to practice')
+          .should('have.text', 'Words to Practice')
       })
     })
   })
