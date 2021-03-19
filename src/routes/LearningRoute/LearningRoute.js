@@ -46,7 +46,7 @@ class LearningRoute extends Component {
   render() {
     return (
       <section className="learn-route">
-        {/* update p, h3, and last 2 p with data from the server once the component mounts */}
+        {/* update h3  with data from the server once the component mounts */}
         <p>
           Your total score is:{" "}
           {this.context.nextWord ? this.context.nextWord.totalScore : null}
