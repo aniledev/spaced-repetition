@@ -77,10 +77,14 @@ class LearningRoute extends Component {
           </Button>
         </form>
         <p className="word-count-stats">
-          You have answered this word correctly 222 times.
+          You have answered this word correctly{" "}
+          {this.context.nextWord ? this.context.nextWord.correctCount : null}{" "}
+          times.
         </p>
         <p className="word-count-stats">
-          You have answered this word incorrectly 333 times.
+          You have answered this word incorrectly{" "}
+          {this.context.nextWord ? this.context.nextWord.incorrectCount : null}{" "}
+          times.
         </p>
       </section>
     );
