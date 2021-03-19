@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import config from "../../config";
+import TokenService from "../../services/token-service";
 import UserContext from "../../contexts/UserContext";
 import { Input, Required, Label } from "../../components/Form/Form";
 import Button from "../../components/Button/Button";
@@ -25,6 +27,20 @@ class LearningRoute extends Component {
 
   // create GET request to api/language/head to start learning with the first word when the component mounts
   componentDidMount() {
+    return (
+      fetch(`${config.API_ENDPOINT}/language/head`, {
+        headers: {
+          Authorization: `bearer ${TokenService.getAuthToken()}`,
+        },
+      })
+        // with the response from the server, update the context with the next word response object
+        .then((res) => res.json())
+        .then((res) => {
+          this.context.setNextWord(res);
+          // this.setState({ loading: false });
+        })
+        .catch((err) => this.setState({ error: err }))
+    );
   }
 
   render() {
