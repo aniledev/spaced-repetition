@@ -67,7 +67,14 @@ class LearningRoute extends Component {
         })
         .catch((err) => this.setState({ error: err }))
     );
-  };
+  }
+
+  // write a function to display the response text
+  renderResponseText() {
+    // iif next word correct
+  }
+  //write a function to render the correct answer
+  renderAnswerExplanation() {}
 
   render() {
     // eslint-disable-next-line no-lone-blocks
