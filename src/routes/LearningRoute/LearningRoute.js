@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import config from "../../config";
 import TokenService from "../../services/token-service";
 import UserContext from "../../contexts/UserContext";
-import { Input, Required, Label } from "../../components/Form/Form";
+import { Input, Label } from "../../components/Form/Form";
 import Button from "../../components/Button/Button";
+import "./LearningRoute.css";
 
 class LearningRoute extends Component {
   //initialize state to hold values for error logging and results from the serer
