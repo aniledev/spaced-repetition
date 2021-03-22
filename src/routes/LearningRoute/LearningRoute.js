@@ -89,42 +89,45 @@ class LearningRoute extends Component {
     return (
       <section className="learn-route">
         <div className="DisplayScore">
-          <p>
+          <p className="correct">
             Your total score is:{" "}
             {this.context.nextWord ? this.context.nextWord.totalScore : null}
           </p>
         </div>
-        <h2 className="learn-route-header">Translate the word:</h2>
-        <span>
-          <h3>
-            {this.context.nextWord ? this.context.nextWord.nextWord : null}
-          </h3>
-        </span>
+        <h2 className="learn-route-header">Translate the word</h2>
+
+        <form onSubmit={this.handleSubmit}>
+          <Label htmlFor="learn-guess-input">
+            <h3 className="learn-subtitle">
+              What's the translation for this word?
+            </h3>
+          </Label>
+          <span>
+            <h4 className="word">
+              {this.context.nextWord ? this.context.nextWord.nextWord : null}
+            </h4>
+          </span>
+          <div className="input-button">
+            <Input
+              className="learn-guess-input"
+              ref={this.firstInput}
+              id="learn-guess-input"
+              name="guess"
+              type="text"
+              placeholder="translation"
+              maxLength="20"
+              autofocus={true}
+              required
+            />
+            <Button className="guess-word-button" type="submit">
+              Submit Answer
+            </Button>
+          </div>
+        </form>
         <div className="DisplayFeedback">
           <p>You were right/good try..</p>
           <p>The correct answer was...</p>
         </div>
-
-        <form onSubmit={this.handleSubmit}>
-          <Label htmlFor="learn-guess-input">
-            What's the translation for this word?
-            <Required />
-          </Label>
-          <Input
-            className="learn-guess-input"
-            ref={this.firstInput}
-            id="learn-guess-input"
-            name="guess"
-            type="text"
-            placeholder="translation"
-            maxLength="20"
-            autofocus={true}
-            required
-          />
-          <Button className="guess-word-button" type="submit">
-            Submit Answer
-          </Button>
-        </form>
         <p className="word-count-stats">
           You have answered this word correctly{" "}
           {this.context.nextWord ? this.context.nextWord.correctCount : null}{" "}
