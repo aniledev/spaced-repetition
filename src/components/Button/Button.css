@@ -15,8 +15,8 @@ button.Button.sign-up-button:hover,
 button.Button.sign-up-button:focus,
 button.Button.login-button:hover,
 button.Button.login-button:focus {
-  background-color: #11a770;
-  border-color: #11a770;
+  background-color: #ff3562;
+  border-color: #ff3562;
   color: #e6e8e6;
   width: 120px;
   height: 48px;
@@ -26,7 +26,8 @@ button.Button.login-button:focus {
   font-size: 24px;
 }
 
-button.Button.start-practicing-button {
+button.Button.start-practicing-button,
+button.Button.guess-word-button {
   background-color: #16db93;
   border-color: #16db93;
   color: black;
@@ -38,13 +39,22 @@ button.Button.start-practicing-button {
 }
 
 button.Button.start-practicing-button:hover,
-button.Button.start-practicing-button:focus {
-  background-color: #11a770;
-  border-color: #11a770;
+button.Button.start-practicing-button:focus,
+button.Button.guess-word-button:hover,
+button.Button.guess-word-button:focus {
+  background-color: #ff3562;
+  border-color: #ff3562;
   color: #e6e8e6;
   width: 240px;
   height: 48px;
   border: none;
   border-radius: 8px;
   font-size: 24px;
+}
+
+button.Button.guess-word-button,
+button.Button.guess-word-button:hover,
+button.Button.guess-word-button:focus {
+  margin: auto;
+  margin-bottom: 30px;
 }
