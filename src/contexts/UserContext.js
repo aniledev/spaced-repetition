@@ -21,6 +21,7 @@ const UserContext = React.createContext({
   // add the next word and current word to the context based on the response object from service/database
   nextWord: {},
   currentWord: {},
+  totalScore: null,
   // create a variable to hold the guessed translation from the user
   translationGuess: {},
   // use this empty callback function to update the state to show the next word and the current word in the word table database
@@ -29,6 +30,7 @@ const UserContext = React.createContext({
   /// use this empty callback function to set the guess to be sent to the service/server to verify
   setTranslationGuess: () => {},
   // will i need the total score to be updated in context????
+  setTotalScore: () => {},
 });
 
 export default UserContext;
@@ -108,6 +110,9 @@ export class UserProvider extends Component {
     this.setState({ translationGuess });
   };
 
+  setTotalScore = (totalScore) => {
+    this.setState({ totalScore });
+  };
 
   processLogin = (authToken) => {
     TokenService.saveAuthToken(authToken);
@@ -168,8 +173,7 @@ export class UserProvider extends Component {
       translationGuess: this.state.translationGuess,
       setNextWord: this.setNextWord,
       setCurrentWord: this.setCurrentWord,
-      setTranslationGuess: this.setTranslationGuess
-
+      setTranslationGuess: this.setTranslationGuess,
     };
 
     return (
