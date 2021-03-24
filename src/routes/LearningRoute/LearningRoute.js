@@ -161,7 +161,7 @@ class LearningRoute extends Component {
               type="text"
               placeholder="translation"
               maxLength="20"
-              autofocus={true}
+              autoFocus={true}
               required
             />
             <Button className="button guess-word-button" type="submit">
