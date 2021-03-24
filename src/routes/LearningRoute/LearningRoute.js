@@ -17,7 +17,8 @@ class LearningRoute extends Component {
       error: null,
       // create this.state.results to determine if the server has update with results; this can conditionally render the correct incorrect feedback text
       results: false,
-      // loading: true,
+      loading: true,
+      // shoudn't loading be false at the onset of the component loading
     };
   }
 
@@ -65,7 +66,7 @@ class LearningRoute extends Component {
         .then((res) => res.json())
         .then((res) => {
           this.context.setNextWord(res);
-          // this.setState({ loading: false });
+          this.setState({ loading: false });
         })
         .catch((err) => this.setState({ error: err }))
     );
