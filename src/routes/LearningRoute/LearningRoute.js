@@ -70,6 +70,23 @@ class LearningRoute extends Component {
     );
   }
 
+  // write a function that clears the feedback jsx based on conditional rendering
+  clearFeedback() {
+    document.getElementById("overlay").classList.add("invisible");
+    document.getElementsByClassName("button").focus();
+  }
+
+  // write a function that allows the feedback to be shown through accessibility keyboard presses
+  keypressClearFeedback(event) {
+    // if the key is enter or spacebar, then clear feedback for accessibility users
+    if (
+      event.key === "Enter" ||
+      event.key === " " ||
+      event.key === "Spacebar"
+    ) {
+      this.clearFeedback();
+    }
+  }
   // write a function to display the response text
   //write a function to render the correct answer
   renderResponseText() {
@@ -134,6 +151,12 @@ class LearningRoute extends Component {
         </form>
         <div className="DisplayFeedback">
           <h2
+            className="overlay invisible"
+            id="overlay"
+            tabIndex="0"
+            onKeyPress={this.keypressClearFeedback}
+            onClick={this.clearFeedback}
+            aria-live="polite"
           >
             {this.renderResponseText()}
           </h2>
