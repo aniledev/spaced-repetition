@@ -71,17 +71,25 @@ class LearningRoute extends Component {
   }
 
   // write a function to display the response text
-  renderResponseText() {
-    // iif next word correct
-  }
   //write a function to render the correct answer
-  renderAnswerExplanation() {}
+  renderResponseText() {
+    // if nextWord.isCorrect !== undefined -> do I ned to check for that?
+    // if context contains the next word based on our HTTP request
+    if (this.context.nextWord) {
+      if (this.context.nextWord.isCorrect) {
+        // return the correct word explanation if nextWord.isCorrect is defined in context, say the database is empty
+        return "Correct! Great job!";
+      } else {
+        // else return the incorrect word explanation
+        return "That's not quite right. Try again next time.";
+      }
+    }
+  }
 
   render() {
     // eslint-disable-next-line no-lone-blocks
     {
       /*
-     I need to conditionally render a feedback div to show whether answer was right.
      I need to conditionally render the correct answer
      I need to conditionally render the button to either be a show answer or next word button
     */
@@ -125,8 +133,10 @@ class LearningRoute extends Component {
           </div>
         </form>
         <div className="DisplayFeedback">
-          <p>You were right/good try..</p>
-          <p>The correct answer was...</p>
+          <h2
+          >
+            {this.renderResponseText()}
+          </h2>
         </div>
         <p className="word-count-stats">
           You have answered this word correctly{" "}
