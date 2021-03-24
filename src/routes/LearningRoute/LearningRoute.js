@@ -198,6 +198,13 @@ class LearningRoute extends Component {
           >
             {this.renderResponseText()}
           </h2>
+          <p
+            // className={this.state.results ? "" : "hidden"}
+            id="overlay"
+            className="overlay invisible"
+          >
+            {this.renderAnswerExplanation()}
+          </p>
         </div>
         <p className="word-count-stats">
           You have answered this word correctly{" "}
