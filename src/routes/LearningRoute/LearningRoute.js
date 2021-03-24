@@ -12,6 +12,7 @@ class LearningRoute extends Component {
     super(props);
     // bind event handler to this component
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.keypressClearFeedback = this.keypressClearFeedback.bind(this);
     this.state = {
       error: null,
       // create this.state.results to determine if the server has update with results; this can conditionally render the correct incorrect feedback text
