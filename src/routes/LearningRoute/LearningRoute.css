@@ -62,3 +62,13 @@ label.Label {
   font-size: 150%;
   font-weight: 600;
 }
+
+#overlay {
+  outline: none;
+}
+
+#overlay.invisible {
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.5s;
+}
