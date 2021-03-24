@@ -88,6 +88,15 @@ class LearningRoute extends Component {
       this.clearFeedback();
     }
   }
+
+  // use conditional rendering to show the feedback section
+  showFeedback() {
+    const element = document.getElementById("overlay");
+    element.classList.remove("invisible");
+    setTimeout(() => {
+      element.classList.add("invisible");
+    }, 2500);
+  }
   // write a function to display the response text
   //write a function to render the correct answer
   renderResponseText() {
