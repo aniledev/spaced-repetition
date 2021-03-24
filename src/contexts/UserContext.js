@@ -96,17 +96,17 @@ export class UserProvider extends Component {
   };
 
   // write a functions that updates the state with nextWord, currentWord, and translationGue
-  setNextWord = nextWord => {
-    this.setState({nextWord})
-  }
+  setNextWord = (nextWord) => {
+    this.setState({ nextWord });
+  };
 
-  setCurrentWord = currentWord => {
-    this.setState({currentWord})
-  }
+  setCurrentWord = (currentWord) => {
+    this.setState({ currentWord });
+  };
 
-  setTranslationGuess = translationGuess => {
-    this.setState({translationGuess})
-  }
+  setTranslationGuess = (translationGuess) => {
+    this.setState({ translationGuess });
+  };
 
 
   processLogin = (authToken) => {
