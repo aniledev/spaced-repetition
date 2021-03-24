@@ -164,8 +164,9 @@ class LearningRoute extends Component {
               autofocus={true}
               required
             />
-            <Button className="guess-word-button" type="submit">
-              Submit Answer
+            <Button className="button guess-word-button" type="submit">
+              {/* Submit Answer */}
+              {this.generateButtonText()}
             </Button>
           </div>
         </form>
