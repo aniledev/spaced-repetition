@@ -98,8 +98,17 @@ class LearningRoute extends Component {
       element.classList.add("invisible");
     }, 2500);
   }
-  // write a function to display the response text
-  //write a function to render the correct answer
+
+  generateButtonText() {
+    // state.results is declared, meaning that the HTTP POST guess has been sent to the server
+    // if true return try again text, if false return submit
+    if (this.state.results) {
+      return "Next";
+    } else {
+      return "Submit Answer";
+    }
+  }
+
   renderResponseText() {
     // if nextWord.isCorrect !== undefined -> do I ned to check for that?
     // if context contains the next word based on our HTTP request
