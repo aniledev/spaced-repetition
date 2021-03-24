@@ -188,7 +188,7 @@ class LearningRoute extends Component {
             </Button>
           </div>
         </form>
-        <div className="DisplayFeedback">
+        <div className="DisplayFeedback invisible">
           <h2
             className="overlay invisible"
             id="overlay"
