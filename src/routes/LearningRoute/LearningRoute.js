@@ -109,16 +109,33 @@ class LearningRoute extends Component {
     }
   }
 
+  // write a function to display the response text based on certain conditions
+  renderAnswerExplanation() {
+    // if context contains the next word, context.nextWord, if the HTTP POST request has received a response
+    // return the correct translation text
+    if (
+      this.context.nextWord &&
+      typeof this.context.nextWord.isCorrect !== undefined
+    ) {
+      return "The correct answer to this was. You guessed";
+      // return `The correct translation for ${this.context.currentWord.nextWord} was ${this.context.nextWord.answer}. You chose ${this.context.guess}`;
+    }
+  }
+
+  //write a function to render the correct answer conditionally based on conditions
   renderResponseText() {
     // if nextWord.isCorrect !== undefined -> do I ned to check for that?
     // if context contains the next word based on our HTTP request
+    // context is updated with nextWord, loading == false, and results === true
     if (this.context.nextWord) {
-      if (this.context.nextWord.isCorrect) {
-        // return the correct word explanation if nextWord.isCorrect is defined in context, say the database is empty
-        return "Correct! Great job!";
-      } else {
-        // else return the incorrect word explanation
-        return "That's not quite right. Try again next time.";
+      if (typeof this.context.nextWord.isCorrect !== undefined) {
+        if (this.context.nextWord.isCorrect) {
+          // return the correct word explanation if nextWord.isCorrect is defined in context, say the database is empty
+          return "Correct! Great job!";
+        } else {
+          // else return the incorrect word explanation
+          return "That's not quite right. Try again next time.";
+        }
       }
     }
   }
