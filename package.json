@@ -26,6 +26,8 @@
     "test": "react-scripts test",
     "deploy": "vercel --prod",
     "predeploy": "npm run build",
+    "cypress:clear": "cypress cache clear",
+    "cypress:verify": "cypress verify",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run"
   },
@@ -46,7 +48,7 @@
   },
   "devDependencies": {
     "@types/lodash": "^4.14.168",
-    "cypress": "^3.2.0",
+    "cypress": "^6.8.0",
     "jsonwebtoken": "^8.5.0",
     "unfetch": "^4.1.0"
   }
