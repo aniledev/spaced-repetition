@@ -144,10 +144,12 @@ class LearningRoute extends Component {
     // eslint-disable-next-line no-lone-blocks
     {
       /*
+     I need to conditionally render a feedback div to show whether answer was right.
      I need to conditionally render the correct answer
      I need to conditionally render the button to either be a show answer or next word button
     */
     }
+
     return (
       <section className="learn-route">
         <div className="DisplayScore">
@@ -157,7 +159,6 @@ class LearningRoute extends Component {
           </p>
         </div>
         <h2 className="learn-route-header">Translate the word</h2>
-
         <form onSubmit={this.handleSubmit}>
           <Label htmlFor="learn-guess-input">
             <h3 className="learn-subtitle">
