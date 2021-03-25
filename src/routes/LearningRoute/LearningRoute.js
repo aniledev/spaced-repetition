@@ -28,30 +28,44 @@ class LearningRoute extends Component {
   // write method to submit the form and check the guess translation against the server/database
   handleSubmit(event) {
     event.preventDefault();
-    // create a variable for the current word
-    // create a variable for the guess translation
-    // update the variable for the next word using state
-    // when i submit the form i also need to conditionally render the feedback text on the page
 
-    // send HTTP request to the server api/language/guess to check the guess against teh server
-    fetch(`${config.API_ENDPOINT}/language/guess`, {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-        Authorization: `bearer ${TokenService.getAuthToken()}`,
-      },
-      // the response body is the input value of the form
-      body: JSON.stringify({ guess: event.target.guess.value }),
-    });
-    // possible way to render feedback; did not pass tests
-    // .then((res) => res.json())
-    // .then((json) => {
-    //   this.context.setNextWord(json);
-    //   this.showFeedback();
-    //   document.getElementById("feedback-overlay").focus();
-    //   this.setState({ loading: false });
-    //   document.getElementById("learn-guess-input").value = "";
-    // });
+    // check if results have been sent back from the server, if true, then update
+    if (this.state.results) {
+      this.setState({ onResults: !this.state.onResults }); // true
+      setTimeout(
+        () => document.getElementById("learn-guess-input").focus(),
+        250
+      );
+    } else {
+      // create a variable for the current word so it shows the next one on page load
+      this.context.setCurrentWord(this.context.nextWord);
+      // create a variable for the guess translation
+      this.context.setTranslationGuess(event.target.guess.value);
+      this.setState({ results: !this.state.results, loading: true }); // true, true
+
+      // post the fetch to the server to check the guess against the database
+      // send HTTP request to the server api/language/guess to check the guess against teh server
+      fetch(`${config.API_ENDPOINT}/language/guess`, {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+          Authorization: `bearer ${TokenService.getAuthToken()}`,
+        },
+        // the response body is the input value of the form
+        body: JSON.stringify({ guess: event.target.guess.value }),
+      })
+        // possible way to render feedback; if th answer is not correct, conditionally render feedback
+        .then((res) => res.json())
+        .then((json) => {
+          this.context.setNextWord(json);
+          this.showFeedback();
+          document.getElementById("overlay").focus();
+          this.setState({ loading: false }); // true, false
+          document.getElementById("learn-guess-input").value = "";
+        });
+    }
+
+    // when I submit the form I also need to conditionally render the feedback text on the page
   }
 
   // create GET request to api/language/head to start learning with the first word when the component mounts
@@ -118,7 +132,7 @@ class LearningRoute extends Component {
   }
 
   // this is the event handler function that triggers when the guess repsonse has been received, and the user clicks next word button
-  nextWord() {
+  nextWordButonHandler() {
     // update the current word in the context so we move to the next word
     // reset the state results and loading so that the state is initial values
     // ensure that the current word is not a repeat
@@ -143,7 +157,7 @@ class LearningRoute extends Component {
       this.context.nextWord &&
       typeof this.context.nextWord.isCorrect !== undefined
     ) {
-      return "The correct answer to this was. You guessed";
+      return "The correct translation for to this was. You guessed";
       // return `The correct translation for ${this.context.currentWord.nextWord} was ${this.context.nextWord.answer}. You chose ${this.context.guess}`;
     }
   }
