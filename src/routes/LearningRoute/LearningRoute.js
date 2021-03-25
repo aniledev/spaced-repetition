@@ -103,10 +103,19 @@ class LearningRoute extends Component {
   generateButton() {
     // if there are results, then load the next word; if results false, submit answer
     if (this.state.results) {
-      return <Button></Button>;
+      return (
+        <Button className="button next-word-button" type="button">
+          {this.generateButtonText()}
+        </Button>
+      );
     } else {
-      return <Button></Button>;
+      return (
+        <Button className="button guess-word-button" type="submit">
+          {this.generateButtonText()}
+        </Button>
+      );
     }
+  }
   }
 
   generateButtonText() {
