@@ -99,6 +99,16 @@ class LearningRoute extends Component {
     }, 2500);
   }
 
+  // write a function that renders submit answer button or next word button
+  generateButton() {
+    // if there are results, then load the next word; if results false, submit answer
+    if (this.state.results) {
+      return <Button></Button>;
+    } else {
+      return <Button></Button>;
+    }
+  }
+
   generateButtonText() {
     // state.results is declared, meaning that the HTTP POST guess has been sent to the server
     // if true return try again text, if false return submit
