@@ -116,6 +116,13 @@ class LearningRoute extends Component {
       );
     }
   }
+
+  // this is the event handler function that triggers when the guess repsonse has been received, and the user clicks next word button
+  nextWord() {
+    // update the current word in the context so we move to the next word
+    // reset the state results and loading so that the state is initial values
+    // ensure that the current word is not a repeat
+    // hide any invisible content on the page, that became visible
   }
 
   generateButtonText() {
