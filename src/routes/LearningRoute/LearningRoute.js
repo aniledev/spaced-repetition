@@ -17,7 +17,7 @@ class LearningRoute extends Component {
       error: null,
       // create this.state.results to determine if the server has update with results; this can conditionally render the correct incorrect feedback text
       results: false,
-      loading: true,
+      loading: false,
       // shoudn't loading be false at the onset of the component loading
     };
   }
