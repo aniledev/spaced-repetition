@@ -28,7 +28,7 @@ describe(`User story: Presented with word`, function () {
 
     cy.fixture("language-head.json").then((languageHeadFixture) => {
       cy.get("main").within(($main) => {
-        cy.get("h2").should("have.text", "Translate the word");
+        cy.get("h2").eq(0).should("have.text", "Translate the word");
         // .siblings("span")
         // .should("have.text", languageHeadFixture.nextWord);
       });
@@ -38,6 +38,9 @@ describe(`User story: Presented with word`, function () {
           "have.text",
           `Your total score is: ${languageHeadFixture.totalScore}`
         );
+      cy.get("form")
+        .children("span")
+        .should("have.text", languageHeadFixture.nextWord);
     });
   });
 

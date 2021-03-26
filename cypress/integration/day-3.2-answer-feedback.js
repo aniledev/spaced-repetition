@@ -95,7 +95,7 @@ describe(`User story: Answer feedback`, function () {
             );
           cy.get(".DisplayFeedback p").should(
             "have.text",
-            `The correct translation for ${languageHeadFixture.nextWord} was ${incorrectFixture.answer} and you chose ${guess}!`
+            `The correct translation for ${languageHeadFixture.nextWord} was ${incorrectFixture.answer}. You entered ${guess}.`
           );
           cy.get("button").should("have.text", `Try another word!`);
         });
@@ -138,7 +138,7 @@ describe(`User story: Answer feedback`, function () {
           cy.get("h2").eq(1).should("have.text", `Correct! Great job!`);
           cy.get(".DisplayFeedback p").should(
             "have.text",
-            `The correct translation for ${languageHeadFixture.nextWord} was ${incorrectFixture.answer} and you chose ${guess}!`
+            `The correct translation for ${languageHeadFixture.nextWord} was ${incorrectFixture.answer}. You entered ${guess}.`
           );
           cy.get("button").should("have.text", `Try another word!`);
         });
