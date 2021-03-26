@@ -80,11 +80,7 @@ describe(`User story: Answer feedback`, function () {
           .fixture("language-guess-incorrect.json")
           .then((langGuessIncFx) => fixtures.push(langGuessIncFx)),
       ]).then(() => {
-        const [
-          languageHeadFixture,
-          incorrectFixture,
-          correctFixture,
-        ] = fixtures;
+        const [languageHeadFixture, incorrectFixture] = fixtures;
 
         cy.get("main").within(($main) => {
           cy.get(".DisplayScore p").should(
