@@ -174,12 +174,12 @@ class LearningRoute extends Component {
   renderAnswerExplanation() {
     // if context contains the next word, context.nextWord, if the HTTP POST request has received a response
     // return the correct translation text
-    if (this.context.nextWord) {
+    if (this.context.currentWord) {
       if (typeof this.context.nextWord.isCorrect !== undefined) {
         if (this.context.nextWord.isCorrect) {
-          return `The correct translation for ${this.context.nextWord.nextWord} was ${this.context.nextWord.answer}. You entered ${this.context.translationGuess}.`;
+          return `The correct translation for ${this.context.currentWord.nextWord} was ${this.context.nextWord.answer}. You entered ${this.context.translationGuess}.`;
         } else {
-          return `The correct translation for ${this.context.nextWord.nextWord} was ${this.context.nextWord.answer}. You entered ${this.context.translationGuess}.`;
+          return `The correct translation for ${this.context.currentWord.nextWord} was ${this.context.nextWord.answer}. You entered ${this.context.translationGuess}.`;
         }
       }
     }
