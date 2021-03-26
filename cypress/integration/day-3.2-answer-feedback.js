@@ -128,11 +128,7 @@ describe(`User story: Answer feedback`, function () {
           .fixture("language-guess-correct.json")
           .then((fx) => fixtures.push(fx)),
       ]).then(() => {
-        const [
-          languageHeadFixture,
-          incorrectFixture,
-          correctFixture,
-        ] = fixtures;
+        const [languageHeadFixture, incorrectFixture] = fixtures;
 
         cy.get("main").within(($main) => {
           cy.get(".DisplayScore p").should(
