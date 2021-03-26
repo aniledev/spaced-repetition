@@ -168,7 +168,7 @@ class LearningRoute extends Component {
       this.context.nextWord &&
       typeof this.context.nextWord.isCorrect !== undefined
     ) {
-      return "The correct translation for to this was. You guessed";
+      return `The correct translation for ${this.context.nextWord.nextWord} was answer. You chose ${this.context.translationGuess}.`;
       // return `The correct translation for ${this.context.currentWord.nextWord} was ${this.context.nextWord.answer}. You chose ${this.context.guess}`;
     }
   }
