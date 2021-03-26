@@ -80,7 +80,11 @@ describe(`User story: Answer feedback`, function () {
           .fixture("language-guess-incorrect.json")
           .then((langGuessIncFx) => fixtures.push(langGuessIncFx)),
       ]).then(() => {
-        const [languageHeadFixture, incorrectFixture] = fixtures;
+        const [
+          languageHeadFixture,
+          incorrectFixture,
+          correctFixture,
+        ] = fixtures;
 
         cy.get("main").within(($main) => {
           cy.get(".DisplayScore p").should(
@@ -95,9 +99,9 @@ describe(`User story: Answer feedback`, function () {
             );
           cy.get(".DisplayFeedback p").should(
             "have.text",
-            `The correct translation for ${languageHeadFixture.nextWord} was ${incorrectFixture.answer}. You entered ${guess}.`
+            `The correct translation for ${incorrectFixture.nextWord} was ${incorrectFixture.answer}. You entered ${guess}.`
           );
-          cy.get("button").should("have.text", `Try another word!`);
+          cy.get("button").should("have.text", `Try Next Word`);
         });
       });
     });
@@ -128,7 +132,11 @@ describe(`User story: Answer feedback`, function () {
           .fixture("language-guess-correct.json")
           .then((fx) => fixtures.push(fx)),
       ]).then(() => {
-        const [languageHeadFixture, incorrectFixture] = fixtures;
+        const [
+          languageHeadFixture,
+          incorrectFixture,
+          correctFixture,
+        ] = fixtures;
 
         cy.get("main").within(($main) => {
           cy.get(".DisplayScore p").should(
@@ -138,9 +146,9 @@ describe(`User story: Answer feedback`, function () {
           cy.get("h2").eq(1).should("have.text", `Correct! Great job!`);
           cy.get(".DisplayFeedback p").should(
             "have.text",
-            `The correct translation for ${languageHeadFixture.nextWord} was ${incorrectFixture.answer}. You entered ${guess}.`
+            `The correct translation for ${incorrectFixture.nextWord} was ${incorrectFixture.answer}. You entered ${guess}.`
           );
-          cy.get("button").should("have.text", `Try another word!`);
+          cy.get("button").should("have.text", `Try Next Word`);
         });
       });
     });
