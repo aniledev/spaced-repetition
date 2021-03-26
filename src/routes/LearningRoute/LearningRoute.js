@@ -116,7 +116,7 @@ class LearningRoute extends Component {
   // write a function that renders submit answer button or next word button
   generateButton() {
     // if there are results, then load the next word; if results false, submit answer
-    if (this.state.results) {
+    if (this.state.results === false) {
       return (
         <Button className="button next-word-button" type="button">
           {this.generateButtonText()}
