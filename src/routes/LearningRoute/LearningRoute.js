@@ -127,10 +127,10 @@ class LearningRoute extends Component {
   // write a function that renders submit answer button or next word button
   generateButton() {
     // if there are results, then load the next word; if results false, submit answer
-    if (this.state.results === false) {
+    if (this.state.results === true) {
       return (
         <Button
-          className="button next-word-button"
+          className="button guess-word-button"
           type="button"
           onClick={this.handleNextWordButton}
         >
@@ -164,7 +164,7 @@ class LearningRoute extends Component {
     // state.results is declared, meaning that the HTTP POST guess has been sent to the server
     // if true return try again text, if false return submit
     if (this.state.results === true) {
-      return "Next";
+      return "Try Next Word";
     } else {
       return "Submit Answer";
     }
@@ -245,10 +245,11 @@ class LearningRoute extends Component {
               autoFocus={true}
               required
             />
-            <Button className="button guess-word-button" type="submit">
-              {/* Submit Answer */}
+            {this.generateButton()}
+            {/* <Button className="button guess-word-button" type="submit">
               {this.generateButtonText()}
-            </Button>
+              Submit Answer
+            </Button> */}
           </div>
         </form>
         <div className="DisplayFeedback invisible">
