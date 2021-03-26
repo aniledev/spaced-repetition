@@ -60,7 +60,9 @@ class LearningRoute extends Component {
         .then((json) => {
           this.context.setNextWord(json);
           this.showFeedback();
+          this.showFeedbackExplanation();
           document.getElementById("overlay").focus();
+          document.getElementById("cover").focus();
           this.setState({ loading: false }); // true, false
           document.getElementById("learn-guess-input").value = "";
         });
@@ -111,7 +113,15 @@ class LearningRoute extends Component {
     element.classList.remove("invisible");
     setTimeout(() => {
       element.classList.add("invisible");
-    }, 2500);
+    }, 7500);
+  }
+
+  showFeedbackExplanation() {
+    const element = document.getElementById("cover");
+    element.classList.remove("invisible");
+    setTimeout(() => {
+      element.classList.add("invisible");
+    }, 7500);
   }
 
   // write a function that renders submit answer button or next word button
@@ -164,12 +174,14 @@ class LearningRoute extends Component {
   renderAnswerExplanation() {
     // if context contains the next word, context.nextWord, if the HTTP POST request has received a response
     // return the correct translation text
-    if (
-      this.context.nextWord &&
-      typeof this.context.nextWord.isCorrect !== undefined
-    ) {
-      return `The correct translation for ${this.context.nextWord.nextWord} was answer. You chose ${this.context.translationGuess}.`;
-      // return `The correct translation for ${this.context.currentWord.nextWord} was ${this.context.nextWord.answer}. You chose ${this.context.guess}`;
+    if (this.context.nextWord) {
+      if (typeof this.context.nextWord.isCorrect !== undefined) {
+        if (this.context.nextWord.isCorrect) {
+          return `The correct translation for ${this.context.nextWord.nextWord} was ${this.context.nextWord.answer}. You entered ${this.context.translationGuess}.`;
+        } else {
+          return `The correct translation for ${this.context.nextWord.nextWord} was ${this.context.nextWord.answer}. You entered ${this.context.translationGuess}.`;
+        }
+      }
     }
   }
 
@@ -252,8 +264,12 @@ class LearningRoute extends Component {
           </h2>
           <p
             // className={this.state.results ? "" : "hidden"}
-            id="overlay"
-            className="overlay invisible"
+            className="cover invisible"
+            id="cover"
+            tabIndex="0"
+            onKeyPress={this.keypressClearFeedback}
+            onClick={this.clearFeedback}
+            aria-live="polite"
           >
             {this.renderAnswerExplanation()}
           </p>
