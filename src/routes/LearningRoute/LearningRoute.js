@@ -142,7 +142,7 @@ class LearningRoute extends Component {
   generateButtonText() {
     // state.results is declared, meaning that the HTTP POST guess has been sent to the server
     // if true return try again text, if false return submit
-    if (this.state.results) {
+    if (this.state.results === true) {
       return "Next";
     } else {
       return "Submit Answer";
