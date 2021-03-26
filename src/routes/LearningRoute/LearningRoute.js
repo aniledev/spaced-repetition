@@ -136,10 +136,15 @@ class LearningRoute extends Component {
     }
   }
 
-  // this is the event handler function that triggers when the guess repsonse has been received, and the user clicks next word button
-  nextWordButonHandler() {
-    // update the current word in the context so we move to the next word; make a new request to /api/language/head
+  // this is the event handler function that triggers when the guess response has been received, and the user clicks next word button
+  handleNextWordButton() {
     // reset the state results and loading so that the state is initial values
+    this.setState({
+      error: null,
+      results: false,
+      loading: false,
+    });
+    // update the current word in the context so we move to the next word; make a new request to /api/language/head
     // ensure that the current word is not a repeat
     // update the necessary context that is needed for the next word to be displayed
     // hide any invisible content on the page, that became visible
