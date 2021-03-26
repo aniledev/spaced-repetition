@@ -27,7 +27,8 @@ button.Button.login-button:focus {
 }
 
 button.Button.start-practicing-button,
-button.Button.guess-word-button {
+button.Button.guess-word-button,
+button.Button.next-word-button {
   background-color: #16db93;
   border-color: #16db93;
   color: black;
@@ -41,7 +42,9 @@ button.Button.guess-word-button {
 button.Button.start-practicing-button:hover,
 button.Button.start-practicing-button:focus,
 button.Button.guess-word-button:hover,
-button.Button.guess-word-button:focus {
+button.Button.guess-word-button:focus,
+button.Button.next-word-button:hover,
+button.Button.next-word-button:focus {
   background-color: #ff3562;
   border-color: #ff3562;
   color: #e6e8e6;
