@@ -33,6 +33,19 @@ const AuthApiService = {
     }).then((res) =>
       !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
     );
+
+    // THIS ALTERNATIVE PROMISE HANDLING ALSO PRODUCED THE SAME CONSOLE ERROR
+
+    //   .then((res) =>
+    //   !res.ok
+    //     ? res.json().then((err) => {
+    //         throw new Error(err);
+    //       })
+    //     : res.json()
+    // )
+    // .catch((error) => {
+    //   throw new Error(error);
+    // });
   },
 };
 
