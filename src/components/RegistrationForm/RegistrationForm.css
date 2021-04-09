@@ -49,3 +49,13 @@ label.Label {
 .button-div {
   height: 50px;
 }
+
+@media all and (max-width: 600px) {
+  .registration-form {
+    text-align: center;
+    width: auto;
+  }
+  .registration-input {
+    float: none;
+  }
+}
