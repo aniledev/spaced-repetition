@@ -11,10 +11,16 @@ class RegistrationRoute extends Component {
 
   handleRegistrationSuccess = () => {
     const { history } = this.props;
-    history.push("/register");
+    history.push("/");
     //history.push("/error") <-- this works but "/" doesnt work
     //history.push("/register") <-- this works but "/" doesnt work
     //history.push("/login") <-- this works but "/" doesnt work
+  };
+
+  handleLoginSuccess = () => {
+    const { location, history } = this.props;
+    const destination = (location.state || {}).from || "/";
+    history.push(destination);
   };
 
   render() {
@@ -28,6 +34,7 @@ class RegistrationRoute extends Component {
         <RegistrationForm
           className="registration-form"
           onRegistrationSuccess={this.handleRegistrationSuccess}
+          onLoginSuccess={this.handleLoginSuccess}
         />
       </section>
     );
