@@ -7,23 +7,18 @@ import Button from "../../components/Button/Button";
 import "./LearningRoute.css";
 
 class LearningRoute extends Component {
-  //initialize state to hold values for error logging and results from the serer
   constructor(props) {
     super(props);
-    // bind event handler to this component
     this.handleSubmit = this.handleSubmit.bind(this);
     this.keypressClearFeedback = this.keypressClearFeedback.bind(this);
     this.handleNextWordButton = this.handleNextWordButton.bind(this);
     this.state = {
       error: null,
-      // create this.state.results to determine if the server has update with results; this can conditionally render the correct incorrect feedback text
       results: false,
       loading: false,
-      // shoudn't loading be false at the onset of the component loading
     };
   }
 
-  // go ahead and initialize UserContext
   static contextType = UserContext;
 
   // write method to submit the form and check the guess translation against the server/database
@@ -52,10 +47,8 @@ class LearningRoute extends Component {
           "content-type": "application/json",
           Authorization: `bearer ${TokenService.getAuthToken()}`,
         },
-        // the response body is the input value of the form
         body: JSON.stringify({ guess: event.target.guess.value }),
       })
-        // possible way to render feedback; if th answer is not correct, conditionally render feedback
         .then((res) => res.json())
         .then((json) => {
           this.context.setNextWord(json);
@@ -63,12 +56,10 @@ class LearningRoute extends Component {
           this.showFeedbackExplanation();
           document.getElementById("overlay").focus();
           document.getElementById("cover").focus();
-          this.setState({ loading: false }); // true, false
+          this.setState({ loading: false });
           document.getElementById("learn-guess-input").value = "";
         });
     }
-
-    // when I submit the form I also need to conditionally render the feedback text on the page
   }
 
   // create GET request to api/language/head to start learning with the first word when the component mounts
@@ -97,7 +88,6 @@ class LearningRoute extends Component {
 
   // write a function that allows the feedback to be shown through accessibility keyboard presses
   keypressClearFeedback(event) {
-    // if the key is enter or spacebar, then clear feedback for accessibility users
     if (
       event.key === "Enter" ||
       event.key === " " ||
@@ -154,10 +144,6 @@ class LearningRoute extends Component {
       results: false,
       loading: false,
     });
-    // update the current word in the context so we move to the next word; make a new request to /api/language/head
-    // ensure that the current word is not a repeat
-    // update the necessary context that is needed for the next word to be displayed
-    // hide any invisible content on the page, that became visible
   }
 
   generateButtonText() {
@@ -187,16 +173,11 @@ class LearningRoute extends Component {
 
   //write a function to render the correct answer conditionally based on conditions
   renderResponseText() {
-    // if nextWord.isCorrect !== undefined -> do I ned to check for that?
-    // if context contains the next word based on our HTTP request
-    // context is updated with nextWord, loading == false, and results === true
     if (this.context.nextWord) {
       if (typeof this.context.nextWord.isCorrect !== undefined) {
         if (this.context.nextWord.isCorrect) {
-          // return the correct word explanation if nextWord.isCorrect is defined in context, say the database is empty
           return "Correct! Great job!";
         } else {
-          // else return the incorrect word explanation
           return "That's not quite right. Try again next time.";
         }
       }
@@ -205,14 +186,6 @@ class LearningRoute extends Component {
 
   render() {
     // eslint-disable-next-line no-lone-blocks
-    {
-      /*
-     I need to conditionally render a feedback div to show whether answer was right.
-     I need to conditionally render the correct answer
-     I need to conditionally render the button to either be a show answer or next word button
-    */
-    }
-
     return (
       <section className="learn-route">
         <div className="DisplayScore">
@@ -246,10 +219,6 @@ class LearningRoute extends Component {
               required
             />
             {this.generateButton()}
-            {/* <Button className="button guess-word-button" type="submit">
-              {this.generateButtonText()}
-              Submit Answer
-            </Button> */}
           </div>
         </form>
         <div className="DisplayFeedback invisible">
@@ -264,7 +233,6 @@ class LearningRoute extends Component {
             {this.renderResponseText()}
           </h2>
           <p
-            // className={this.state.results ? "" : "hidden"}
             className="cover invisible"
             id="cover"
             tabIndex="0"

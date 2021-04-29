@@ -3,8 +3,6 @@ import AuthApiService from "../services/auth-api-service";
 import TokenService from "../services/token-service";
 import IdleService from "../services/idle-service";
 
-// add language to to the context so the language name can be shared
-// list of words also is initially null because no calls to the server has been made initially
 const UserContext = React.createContext({
   user: {},
   error: null,
@@ -15,21 +13,15 @@ const UserContext = React.createContext({
   setUser: () => {},
   processLogin: () => {},
   processLogout: () => {},
-  // add empty callback functions for setting the language and the list of words
   setLanguage: () => {},
   setWords: () => {},
-  // add the next word and current word to the context based on the response object from service/database
   nextWord: {},
   currentWord: {},
   totalScore: null,
-  // create a variable to hold the guessed translation from the user
   translationGuess: {},
-  // use this empty callback function to update the state to show the next word and the current word in the word table database
   setNextWord: () => {},
   setCurrentWord: () => {},
-  /// use this empty callback function to set the guess to be sent to the service/server to verify
   setTranslationGuess: () => {},
-  // will i need the total score to be updated in context????
   setTotalScore: () => {},
 });
 

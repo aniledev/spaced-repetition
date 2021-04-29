@@ -12,9 +12,6 @@ class RegistrationRoute extends Component {
   handleRegistrationSuccess = () => {
     const { history } = this.props;
     history.push("/");
-    //history.push("/error") <-- this works but "/" doesnt work
-    //history.push("/register") <-- this works but "/" doesnt work
-    //history.push("/login") <-- this works but "/" doesnt work
   };
 
   handleLoginSuccess = () => {

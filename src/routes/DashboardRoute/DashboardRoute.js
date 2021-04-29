@@ -6,10 +6,8 @@ import TokenService from "../../services/token-service";
 import UserContext from "../../contexts/UserContext";
 import WordList from "./WordList";
 import "./DashboardRoute.css";
-// import { result } from "cypress/types/lodash";
 
 class DashboardRoute extends Component {
-  // initialize state to catch errors a use that for conditional rendering of error messages
   constructor(props) {
     super(props);
     this.state = {
@@ -18,7 +16,6 @@ class DashboardRoute extends Component {
     };
   }
 
-  // use context for sharing data
   static contextType = UserContext;
 
   // mount component and fetch GET /api/language endpoint ung the bearer token and service
@@ -49,7 +46,6 @@ class DashboardRoute extends Component {
   render() {
     return (
       <section className="dashboard-route">
-        {/* h2 and p need to be updated with info from the server*/}
         <h2 className="dashboard-header">
           {this.context.language ? this.context.language.name : null}
         </h2>

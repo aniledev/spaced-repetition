@@ -32,7 +32,6 @@ class RegistrationForm extends Component {
         name.value = "";
         username.value = "";
         password.value = "";
-        // this.props.onRegistrationSuccess();
       })
       .catch((res) => {
         this.setState({ error: res.error });
